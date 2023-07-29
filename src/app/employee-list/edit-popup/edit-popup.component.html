@@ -1,0 +1,26 @@
+<h2 mat-dialog-title>Edit Employee</h2>
+<div mat-dialog-content>
+  <form #editForm="ngForm" (ngSubmit)="saveChanges()">
+    <mat-form-field>
+      <input matInput placeholder="Name" name="name" [(ngModel)]="editedEmployee.name" required>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Designation" name="department" [(ngModel)]="editedEmployee.department.name" required>
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput placeholder="Address" name="address" [(ngModel)]="editedEmployee.address" required>
+      </mat-form-field>
+  
+
+    <mat-form-field>
+      <input matInput placeholder="Salary" name="salary" [(ngModel)]="editedEmployee.salary.basic" type="number" required>
+    </mat-form-field>
+
+  </form>
+</div>
+<div mat-dialog-actions style="justify-content: end !important;margin-right:36px">
+  <button mat-button (click)="cancel()">Cancel</button>
+  <button mat-raised-button color="primary" [disabled]="editForm.invalid" (click)="saveChanges()">Save</button>
+</div>
